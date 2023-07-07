@@ -1,0 +1,14 @@
+
+
+
+<form action="/make">
+  주제<input name="subject" >
+  갯수<input name="num" value="5">  
+  <input type="submit" value="만들기">
+</form>
+
+{% for file in files  %}
+ <a href="readquiz/{{file}}"> {{file}}  </a> <br/>
+{% endfor  %}
+
+

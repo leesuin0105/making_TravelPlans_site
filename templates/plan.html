@@ -1,0 +1,41 @@
+<!-- plan.html -->
+<html>
+<head>
+    <title>여행 계획 생성기</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>여행 계획 생성기</h1>
+    {% for day in plan %}
+        <h2>{{ day.date }}</h2>
+        <table>
+            <tr>
+                <th>시간</th>
+                <th>장소</th>
+                <th>위도</th>
+                <th>경도</th>
+            </tr>
+            {% for item in day.schedule %}
+                <tr>
+                    <td>{{ item.time }}</td>
+                    <td>{{ item.location }}</td>
+                    <td>{{ item.latitude }}</td>
+                    <td>{{ item.longitude }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+    <p>계획이 성공적으로 생성되었습니다!</p>
+</body>
+</html>

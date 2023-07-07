@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>여행 계획 결과</title>
+    <script>
+        function showHTML() {
+            var win = window.open("", "outWin", "width=300,height=200");
+            var textArea = document.getElementById("srcText");
+            win.document.open();
+            win.document.write(textArea.value);
+            win.document.close();
+        }
+    </script>
+</head>
+<body>
+    <h1>여행 계획 결과</h1>
+    <textarea id="srcText" rows="10" cols="50">{{ plan }}</textarea>
+    <br>
+    <br>
+    <button onclick="showHTML()">여행 계획 결과</button>
+</body>
+</html>
